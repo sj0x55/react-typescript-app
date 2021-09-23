@@ -1,0 +1,3 @@
+type FetchNewDataProps = {
+  type: string;
+};
