@@ -1,1 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This is only education project for learning TypeScript using with React and Redux. There is no well defined architecture of the code and separation of concerns based on SOLID principles.
+
+The main goal is understand the TypeScript based on simple real-life application using React and Redux.

@@ -1,8 +1,8 @@
 - [x] Routing
-- [ ] Unit tests (with high coverage) !!!
-- [ ] E2E tests
-- [ ] Storybook
+- [ ] Unit tests (with high level of code coverage) !!!
+- [ ] Error handling (logging system)
 - [ ] Git hook / Husky
-- [ ] Error handling (+ try/catch)
+- [ ] Storybook
+- [ ] E2E tests
 - [ ] Disks and Smartphones data as separate state
 - [ ] Rename MainContent => BaseList
