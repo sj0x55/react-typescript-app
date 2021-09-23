@@ -19,7 +19,6 @@ const Wrapper = styled(ContentLayoutGrid)`
 `;
 
 export const ListOfSomething = ({ data }: ListOfSomethingProps) => {
-  const amazonBaseUrl = 'https://www.amazon.co.uk';
   const colsNum = 6;
 
   return (
@@ -63,7 +62,7 @@ export const ListOfSomething = ({ data }: ListOfSomethingProps) => {
             {item.condition}
           </ContentLayoutCell>
           <ContentLayoutCell columns={colsNum} bold={isPriceDropped(item)}>
-            <Link href={`${amazonBaseUrl}${item.href}`} target="_blank">
+            <Link href={item.href} target="_blank">
               {item.title}
             </Link>
           </ContentLayoutCell>

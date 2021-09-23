@@ -96,11 +96,11 @@ export async function fetchDataFromWishList(baseUrl, pathUrl, featureMap = {}) {
     const productFactory = createProductFactory(productData, productFeatures);
 
     if (priceForNew) {
-      allData.push(productFactory('new', priceForNew, { href: linkForNew }));
+      allData.push(productFactory('new', priceForNew, { href: `${baseUrl}${linkForNew}` }));
     }
 
     if (priceForUsed && priceForUsed !== priceForNew) {
-      allData.push(productFactory('used', priceForUsed, { href: linkForUsed }));
+      allData.push(productFactory('used', priceForUsed, { href: `${baseUrl}${linkForUsed}` }));
     }
   });
 

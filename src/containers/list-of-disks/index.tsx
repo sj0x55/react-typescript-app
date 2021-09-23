@@ -21,7 +21,6 @@ const Wrapper = styled(ContentLayoutGrid)`
 `;
 
 export const ListOfDisks = ({ data }: ListOfDisksProps) => {
-  const amazonBaseUrl = 'https://www.amazon.co.uk';
   const colsNum = 8;
   const capacityMin = useSelector(selectCapacityMin);
   const capacityMax = useSelector(selectCapacityMax);
@@ -84,7 +83,7 @@ export const ListOfDisks = ({ data }: ListOfDisksProps) => {
               {item.condition}
             </ContentLayoutCell>
             <ContentLayoutCell columns={colsNum} bold={isPriceDropped(item)}>
-              <Link href={`${amazonBaseUrl}${item.href}`} target="_blank">
+              <Link href={item.href} target="_blank">
                 {item.title}
               </Link>
             </ContentLayoutCell>
