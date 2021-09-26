@@ -6,7 +6,7 @@ export const calcPricePerTB = (price?: number | null, capacity?: number): number
   }
 };
 
-export const prepareData = (data: DiskItem[]) => {
+export const prepareData = (data: DiskItem[]): DiskItem[] => {
   return data.map((item) => {
     const { features, price, prevPrice } = item;
     const { capacity } = features || {};
@@ -20,30 +20,13 @@ export const prepareData = (data: DiskItem[]) => {
   });
 };
 
-export const sortData = (data: DiskItem[]) => {
-  data.sort((aItem: DiskItem, bItem: DiskItem) => {
-    const { pricePerTB: aPricePerTB = null } = aItem;
-    const { pricePerTB: bPricePerTB = null } = bItem;
+export const filterData = (filters: ProductFilters, items: DiskItem[]) => {
+  return items.filter((item) => {
+    const { capacity } = item.features;
+    const { ['capacity.min']: capacityMin, ['capacity.max']: capacityMax } = filters || {};
 
-    if (!aPricePerTB) {
-      return 1;
-    } else if (!bPricePerTB) {
-      return -1;
-    } else {
-      return aPricePerTB < bPricePerTB ? -1 : 1;
+    if (capacity) {
+      return !((capacityMin && capacity < capacityMin) || (capacityMax && capacity > capacityMax));
     }
   });
-
-  return data;
-};
-
-export const filterData = (options: Partial<ListOfDisksState>) => (item: DiskItem) => {
-  const { capacity } = item.features;
-  const { capacityMin, capacityMax } = options;
-
-  if (capacity) {
-    return !((capacityMin && capacity < capacityMin) || (capacityMax && capacity > capacityMax));
-  }
-
-  return true;
 };

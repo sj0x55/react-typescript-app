@@ -1,10 +1,10 @@
 module.exports = {
   semi: true,
-  printWidth: 120,
   overrides: [
     {
       files: '**/*.{js,mjs,jsx,ts,tsx}',
       options: {
+        printWidth: 140,
         parser: 'typescript',
         singleQuote: true,
         arrowParens: 'always',

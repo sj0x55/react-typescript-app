@@ -1,99 +1,58 @@
-import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
-
-import styled from 'styled-components';
-import { Link } from 'components/Link';
-import {
-  decorateFlagDrop,
-  calcPriceChangePercentages,
-  appendCurrency,
-  isPriceDropped,
-} from 'containers/main-content/mainContent.operations';
-import { ContentLayoutCell, ContentLayoutGrid } from 'components/layouts/content';
-import { selectCapacityMin, selectCapacityMax } from './listOfDisks.selectors';
-import { prepareData, sortData, filterData } from './listOfDisks.operations';
-import { Text } from 'components/Text';
-import { DateFormat } from 'components/DateFormat';
-import { Image } from 'components/Image';
-
-const Wrapper = styled(ContentLayoutGrid)`
-  grid-template-columns: 40px 120px 200px 200px 150px 150px 1fr 120px;
-`;
+import { selectProductFilters } from 'app/selectors';
+import { DynamicList } from 'containers/dynamic-list';
+import { sort } from 'modules/data';
+import { prepareData, filterData } from './listOfDisks.operations';
 
 export const ListOfDisks = ({ data }: ListOfDisksProps) => {
-  const colsNum = 8;
-  const capacityMin = useSelector(selectCapacityMin);
-  const capacityMax = useSelector(selectCapacityMax);
+  const diskFilters = useSelector(selectProductFilters('disks'));
+  const sortByPricePerTB = (data: DiskItem[]) => sort(data, 'pricePerTB');
+  const config: DynamicListConfig[] = [
+    {
+      name: 'Image',
+      type: 'image',
+      colSize: '120px',
+      align: 'center',
+      dataPropertyName: 'image',
+    },
+    {
+      name: 'Price per TB',
+      type: 'text',
+      colSize: '200px',
+      align: 'center',
+      dataPropertyName: 'pricePerTB',
+      dataPrefix: '£ ',
+    },
+    {
+      name: 'Price',
+      type: 'text',
+      colSize: '200px',
+      align: 'center',
+      dataPropertyName: 'price',
+      dataPrefix: '£ ',
+    },
+    {
+      name: 'Capacity',
+      type: 'text',
+      colSize: '150px',
+      align: 'center',
+      dataPropertyName: 'features.capacity',
+      dataSuffix: ' TB',
+    },
+    {
+      name: 'Condition',
+      type: 'text',
+      colSize: '150px',
+      align: 'center',
+      dataPropertyName: 'condition',
+    },
+    {
+      name: 'Name',
+      type: 'link',
+      colSize: '1fr',
+      dataPropertyName: 'title',
+    },
+  ];
 
-  return (
-    <Wrapper>
-      <ContentLayoutCell columns={colsNum} align="center">
-        -
-      </ContentLayoutCell>
-      <ContentLayoutCell columns={colsNum} align="center">
-        Image
-      </ContentLayoutCell>
-      <ContentLayoutCell columns={colsNum} align="center">
-        Price per TB
-      </ContentLayoutCell>
-      <ContentLayoutCell columns={colsNum} align="center">
-        Price
-      </ContentLayoutCell>
-      <ContentLayoutCell columns={colsNum} align="center">
-        Capacity
-      </ContentLayoutCell>
-      <ContentLayoutCell columns={colsNum} align="center">
-        Condition
-      </ContentLayoutCell>
-      <ContentLayoutCell columns={colsNum}>Name</ContentLayoutCell>
-      <ContentLayoutCell align="right" columns={colsNum}>
-        Last update
-      </ContentLayoutCell>
-
-      {sortData(prepareData(data))
-        .filter(filterData({ capacityMin, capacityMax }))
-        .map((item: DiskItem, index: number) => (
-          <Fragment key={`row${index}`}>
-            <ContentLayoutCell columns={colsNum} align="center" bold={isPriceDropped(item)}>
-              {decorateFlagDrop(item)}
-            </ContentLayoutCell>
-            <ContentLayoutCell columns={colsNum} align="center">
-              <Image src={`${item.image}`} alt={item.title} width="60" height="60" />
-            </ContentLayoutCell>
-            <ContentLayoutCell columns={colsNum} align="center" flexDirection="column">
-              <Text>
-                <Text bold={isPriceDropped(item)}>{appendCurrency(item.pricePerTB)}</Text>
-                {isPriceDropped(item) ? (
-                  <Text size="m"> (-{calcPriceChangePercentages(item.prevPrice, item.price, 0)}%)</Text>
-                ) : (
-                  ''
-                )}
-              </Text>
-
-              {isPriceDropped(item) ? <Text size="m">(was: {appendCurrency(item.prevPricePerTB)})</Text> : ''}
-            </ContentLayoutCell>
-            <ContentLayoutCell columns={colsNum} align="center" flexDirection="column">
-              <Text bold={isPriceDropped(item)}>{appendCurrency(item.price)}</Text>
-              {isPriceDropped(item) ? <Text size="m">(was: {appendCurrency(item.prevPrice)})</Text> : ''}
-            </ContentLayoutCell>
-            <ContentLayoutCell columns={colsNum} align="center" bold={isPriceDropped(item)}>
-              {item.features.capacity ? `${item.features.capacity}TB` : '-'}
-            </ContentLayoutCell>
-            <ContentLayoutCell columns={colsNum} align="center" bold={isPriceDropped(item)}>
-              {item.condition}
-            </ContentLayoutCell>
-            <ContentLayoutCell columns={colsNum} bold={isPriceDropped(item)}>
-              <Link href={item.href} target="_blank">
-                {item.title}
-              </Link>
-            </ContentLayoutCell>
-            <ContentLayoutCell align="right" columns={colsNum} bold={isPriceDropped(item)}>
-              <Text size="m">
-                <DateFormat date={item.timestampChanged} />
-              </Text>
-            </ContentLayoutCell>
-          </Fragment>
-        ))}
-    </Wrapper>
-  );
+  return <DynamicList config={config} data={sortByPricePerTB(filterData(diskFilters, prepareData(data)))} />;
 };

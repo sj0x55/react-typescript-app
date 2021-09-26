@@ -1,34 +1,37 @@
+import { get } from 'lodash';
 import { useDispatch, useSelector } from 'app/hooks';
+import { actions } from 'app/slice';
+import { selectProductFilters } from 'app/selectors';
 import { Label } from 'components/Label';
 import { Pane } from 'components/Pane';
 import { Div } from 'components/Div';
 import { NumberInput } from 'components/inputs';
-import { actions } from 'containers/list-of-disks/listOfDisks.slice';
-import { selectCapacityMin, selectCapacityMax } from 'containers/list-of-disks/listOfDisks.selectors';
 
 export const FiltersOfDisks = () => {
   const dispatch = useDispatch();
-  const capacityMin = useSelector(selectCapacityMin);
-  const capacityMax = useSelector(selectCapacityMax);
+  const diskFilters = useSelector(selectProductFilters('disks'));
+  const capacityMin = get(diskFilters, 'capacity.min');
+  const capacityMax = get(diskFilters, 'capacity.max');
+  const updateFilterCapacity = (key: string, value: string) => {
+    dispatch(
+      actions.updateProductFilter({
+        type: 'disks',
+        property: `capacity.${key}`,
+        value: Number(value),
+      }),
+    );
+  };
 
   return (
     <Pane title="Capacity">
       <Div>
-        <NumberInput
-          value={`${capacityMin || ''}`}
-          onChange={(e) => dispatch(actions.updateCapacityMin(Number(e.target.value)))}
-        />
+        <NumberInput value={`${capacityMin || ''}`} onChange={(e) => updateFilterCapacity('min', e.target.value)} />
         <Label> min</Label>
       </Div>
       <Div>
-        <NumberInput
-          value={`${capacityMax || ''}`}
-          onChange={(e) => dispatch(actions.updateCapacityMax(Number(e.target.value)))}
-        />
+        <NumberInput value={`${capacityMax || ''}`} onChange={(e) => updateFilterCapacity('max', e.target.value)} />
         <Label> max</Label>
       </Div>
     </Pane>
   );
 };
-
-/*  */

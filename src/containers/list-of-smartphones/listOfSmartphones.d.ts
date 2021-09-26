@@ -1,13 +1,9 @@
-type SmartphoneItemFeatures = {
-  color?: string;
-};
-
-type SmartphoneItem = MainContentItem & {
-  features: SmartphoneItemFeatures;
+type SmartphonesItem = MainContentItem & {
+  features: {
+    color?: string;
+  };
 };
 
 type ListOfSmartphonesProps = {
-  data: SmartphoneItem[];
+  data: SmartphonesItem[];
 };
-
-interface ListOfSmartphonesState {}

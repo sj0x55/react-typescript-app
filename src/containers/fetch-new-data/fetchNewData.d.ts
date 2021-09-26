@@ -1,3 +1,3 @@
 type FetchNewDataProps = {
-  type: string;
+  type: ProductTypes;
 };

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'app/hooks';
-import { isLoading } from 'containers/main-content/mainContent.selectors';
-import { fetchDataAsync } from 'containers/main-content/mainContent.slice';
+import { isLoading } from 'app/selectors';
+import { fetchDataAsync } from 'app/slice';
 import { Pane } from 'components/Pane';
 import { Button } from 'components/Button';
 

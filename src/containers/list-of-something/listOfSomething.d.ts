@@ -1,7 +1,7 @@
-type SomethingItem = MainContentItem;
+type SomethingItem = MainContentItem & {
+  features: {};
+};
 
 type ListOfSomethingProps = {
   data: SomethingItem[];
 };
-
-interface ListOfSomethingState {}

@@ -1,18 +1,11 @@
-type DiskItemFeatures = {
-  capacity?: number;
-};
-
-type DiskItem = MainContentItem & {
+type DiskItem = Product & {
   pricePerTB: number | null;
   prevPricePerTB: number | null;
-  features: DiskItemFeatures;
+  features: {
+    capacity?: number;
+  };
 };
 
 type ListOfDisksProps = {
   data: DiskItem[];
 };
-
-interface ListOfDisksState {
-  capacityMin: number | null;
-  capacityMax: number | null;
-}

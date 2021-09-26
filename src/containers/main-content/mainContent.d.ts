@@ -1,3 +1,8 @@
+type MainContentProps = {
+  type: string;
+  component: ElementType;
+};
+
 type MainContentItemJsonSchemaFeatures = {
   [key: string]: string | number;
 };
@@ -26,4 +31,7 @@ interface MainContentState {
   isNew: boolean;
   isUsed: boolean;
   status: 'idle' | 'loading' | 'failed';
+  filters: {
+    [key: string]: string | number | boolean | null;
+  };
 }
