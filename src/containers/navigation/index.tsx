@@ -14,11 +14,12 @@ export const Wrapper = styled.nav`
 
 export const Navigation = () => {
   return (
-    <Wrapper>
-      <StyledLink to="/disks">Disks</StyledLink>
-      <StyledLink to="/smartphones">Smartphones</StyledLink>
-      <StyledLink to="/other">Other</StyledLink>
-      <StyledLink to="/dynamic">Dynamic</StyledLink>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <StyledLink to="/disks">Disks</StyledLink>
+        <StyledLink to="/smartphones">Smartphones</StyledLink>
+        <StyledLink to="/other">Other</StyledLink>
+      </Wrapper>
+    </>
   );
 };

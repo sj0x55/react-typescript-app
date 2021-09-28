@@ -6,6 +6,11 @@ import { Label } from 'components/Label';
 import { Pane } from 'components/Pane';
 import { Div } from 'components/Div';
 import { NumberInput } from 'components/inputs';
+import styled from 'styled-components';
+
+const DivWrapper = styled(Div)`
+  margin-bottom: 5px;
+`;
 
 export const FiltersOfDisks = () => {
   const dispatch = useDispatch();
@@ -24,14 +29,22 @@ export const FiltersOfDisks = () => {
 
   return (
     <Pane title="Capacity">
-      <Div>
-        <NumberInput value={`${capacityMin || ''}`} onChange={(e) => updateFilterCapacity('min', e.target.value)} />
+      <DivWrapper>
+        <NumberInput
+          value={`${capacityMin || ''}`}
+          placeholder="min"
+          onChange={(e) => updateFilterCapacity('min', e.target.value)}
+        />
         <Label> min</Label>
-      </Div>
-      <Div>
-        <NumberInput value={`${capacityMax || ''}`} onChange={(e) => updateFilterCapacity('max', e.target.value)} />
+      </DivWrapper>
+      <DivWrapper>
+        <NumberInput
+          value={`${capacityMax || ''}`}
+          placeholder="max"
+          onChange={(e) => updateFilterCapacity('max', e.target.value)}
+        />
         <Label> max</Label>
-      </Div>
+      </DivWrapper>
     </Pane>
   );
 };

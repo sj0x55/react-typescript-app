@@ -7,5 +7,13 @@ export interface LinkProps {
 }
 
 export const Link = styled.a`
-  font-size: ${(props: LinkProps) => (props.theme && props.size ? props.theme.fontSize[props.size] : null)};
+  cursor: pointer;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.darkGrey};
+  font-size: ${(props: LinkProps) =>
+    props.theme && props.size ? props.theme.fontSize[props.size] : null};
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

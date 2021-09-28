@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { Statuses } from 'app/constants';
 import { fetchDataPayloadCreator } from 'app/operations';
 import * as reducers from 'app/reducers';
@@ -18,7 +18,9 @@ export const { reducer, actions } = createSlice({
   initialState,
   reducers,
   extraReducers: (builder) => {
-    builder.addCase(fetchDataAsync.pending, reducers.setLoadingStatus).addCase(fetchDataAsync.fulfilled, reducers.setFulfilledStatus);
+    builder
+      .addCase(fetchDataAsync.pending, reducers.setLoadingStatus)
+      .addCase(fetchDataAsync.fulfilled, reducers.setFulfilledStatus);
   },
 });
 
