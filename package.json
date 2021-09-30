@@ -15,8 +15,15 @@
   },
   "devDependencies": {
     "@godaddy/terminus": "^4.9.0",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-docs": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.8",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
+    "@testing-library/react": "^12.1.1",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/lodash": "^4.14.173",
@@ -25,6 +32,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-redux": "^7.1.18",
     "@types/react-router-dom": "^5.1.9",
+    "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.14",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
@@ -39,24 +47,40 @@
     "http-errors": "^1.8.0",
     "husky": "^7.0.2",
     "ip": "^1.1.5",
+    "jest-styled-components": "^7.0.5",
     "kill-port": "^1.6.1",
     "lint-staged": "^11.1.2",
     "nodemailer": "^6.6.3",
     "prettier": "^2.4.0",
     "react-scripts": "^4.0.3",
+    "react-test-renderer": "^17.0.2",
     "typescript": "^4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-with-coverage": "npm test -- --coverage",
+    "e2e": "cypress open --project ./src/e2e",
     "eject": "react-scripts eject",
     "lint": "eslint --ext js,mjs,jsx,ts,tsx,json",
+    "sb:start": "start-storybook -p 6006 -s public",
+    "sb:build": "build-storybook -s public",
     "server": "node --inspect ./src/server/start.mjs",
-    "fetch-data": "node ./scripts/fetch-data.mjs"
+    "fetch-data": "node ./scripts/fetch-data.mjs",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": ["**/*.stories.*"],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
@@ -73,5 +97,13 @@
   },
   "lint-staged": {
     "{src}/**/*.{js,mjs,jsx,ts,tsx,json}": ["npm run lint -- --no-ignore --fix"]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!.history"
+    ],
+    "coverageReporters": ["text-summary", "html"]
   }
 }

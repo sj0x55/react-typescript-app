@@ -1,6 +1,7 @@
 .env
 temp
 _
+storybook-static
 
 # dependencies
 /node_modules

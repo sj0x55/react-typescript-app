@@ -1,21 +1,10 @@
 module.exports = {
   overrides: [
     {
-      files: '**/*.{js,mjs,ts}',
+      files: '**/*.{js,jsx,mjs,ts,tsx}',
       options: {
         semi: true,
         printWidth: 120,
-        parser: 'typescript',
-        singleQuote: true,
-        arrowParens: 'always',
-        trailingComma: 'all',
-      },
-    },
-    {
-      files: '**/*.{jsx,tsx}',
-      options: {
-        semi: true,
-        printWidth: 80,
         parser: 'typescript',
         singleQuote: true,
         arrowParens: 'always',

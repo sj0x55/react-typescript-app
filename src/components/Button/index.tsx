@@ -1,10 +1,6 @@
-import { ReactNode, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
+import type { ButtonProps } from './Button';
 import styled from 'styled-components';
-
-type ButtonProps = {
-  stretch: boolean;
-  children?: ReactNode;
-};
 
 export const Button = styled.button`
   background: ${({ theme }) => theme.colors.darkGrey};
