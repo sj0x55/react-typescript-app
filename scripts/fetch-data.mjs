@@ -16,7 +16,7 @@ import { createTransport } from 'nodemailer';
   dotenv.config();
 
   const baseAmazonUrl = 'https://www.amazon.co.uk';
-  const urlQuery = '?filter=unpurchased&sort=price-asc';
+  const urlQuery = '?filter=all&sort=price-asc&viewType=list';
   const createEmailContentItems = (items, extraInfoFn = null, validatorFn = null) =>
     items
       .filter((item) => item.isPriceChanged && item.price < item.prevPrice)

@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
@@ -29,7 +29,10 @@ const getWrapper = (
 };
 
 const customRender = (ui: ReactElement, opts?: RenderOptions) => {
-  return render(ui, { wrapper: getWrapper((opts || {}).store), ...opts });
+  const renderResult = render(ui, { wrapper: getWrapper((opts || {}).store), ...opts });
+  const firstChild = renderResult.container.firstChild;
+
+  return { ...renderResult, firstChild };
 };
 
 const customCreate = (ui: ReactElement, opts?: TestRendererOptions) => {
@@ -38,6 +41,13 @@ const customCreate = (ui: ReactElement, opts?: TestRendererOptions) => {
   return testRenderer.create(<Wrapper>{ui}</Wrapper>, opts);
 };
 
+const mockComponent = function () {
+  return ({ children, ...props }: { children: ReactNode }) => {
+    return <span {...props}>{children}</span>;
+  };
+};
+
 export * from '@testing-library/react';
 export { customCreate as create };
 export { customRender as render };
+export { mockComponent };

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should match a snapshot 1`] = `
+exports[`Button component should match a snapshot 1`] = `
 .c0 {
   background: #66748f;
   border: 1px solid #111111;
@@ -26,7 +26,7 @@ exports[`should match a snapshot 1`] = `
 </button>
 `;
 
-exports[`should match a snapshot with stretch prop 1`] = `
+exports[`Button component should match a snapshot with stretch prop 1`] = `
 .c0 {
   background: #66748f;
   border: 1px solid #111111;

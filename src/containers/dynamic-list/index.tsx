@@ -6,14 +6,16 @@ import { Text } from 'components/Text';
 import { Link } from 'components/Link';
 import { Image } from 'components/Image';
 import { DateFormat } from 'components/DateFormat';
+import { prepareValue } from './dynamicList.operations';
 
 const Wrapper = styled(ContentLayoutGrid)`
   grid-template-columns: ${(props: PropsWithChildren<{ sizes: string[] }>) => join(props.sizes, ' ')};
 `;
 
 const renderCellByType = (conf: DynamicListConfig, item: DynamicListItem) => {
-  const value = (conf.dataPropertyName && get(item, conf.dataPropertyName)) || null;
-  const { dataPrefix, dataSuffix, type, textSize } = conf;
+  const { dataPrefix, dataSuffix, type, textSize, dataPropertyName } = conf;
+  const value = dataPropertyName ? get(item, dataPropertyName) : null;
+  const noImageLabel = '[no image]';
 
   switch (type) {
     case 'link':
@@ -23,7 +25,7 @@ const renderCellByType = (conf: DynamicListConfig, item: DynamicListItem) => {
         </Link>
       );
     case 'image':
-      return isString(value) ? <Image src={value} width="60" height="60" /> : <Text size="m">[no image]</Text>;
+      return isString(value) ? <Image src={value} width="60" height="60" /> : <Text size="m">{noImageLabel}</Text>;
     case 'date':
       return (
         <Text size={textSize}>
@@ -31,7 +33,7 @@ const renderCellByType = (conf: DynamicListConfig, item: DynamicListItem) => {
         </Text>
       );
     default:
-      return <Text>{join([dataPrefix, value, dataSuffix], '').trim() || '-'}</Text>;
+      return <Text>{prepareValue(value, { prefix: dataPrefix, suffix: dataSuffix })}</Text>;
   }
 };
 
@@ -68,7 +70,12 @@ export const DynamicList = ({ config, data }: DynamicListConfigProps) => {
 
       {data.map((item, i) =>
         prepareConfig(config).map((conf, j) => (
-          <ContentLayoutCell key={`cell${i}-${j + 1}`} columns={colsLength} align={conf.align}>
+          <ContentLayoutCell
+            data-testid={`testid${i}-${j + 1}`}
+            key={`cell${i}-${j + 1}`}
+            columns={colsLength}
+            align={conf.align}
+          >
             {renderCellByType(conf, item)}
           </ContentLayoutCell>
         )),

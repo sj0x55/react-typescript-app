@@ -1,7 +1,11 @@
+type KeyValObj = {
+  [key: string]: unknown;
+};
+
 type ProductJsonSchema = {
   condition: string;
   title: string;
-  image: string;
+  image: string | null;
   href: string;
   price: number;
   prevPrice: number | null;

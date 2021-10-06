@@ -9,20 +9,22 @@ const jsonButtonElement = (stretch = false) => {
   return create(getButtonElement(stretch)).toJSON();
 };
 
-it('should render a button', () => {
-  render(getButtonElement());
+describe('Button component', () => {
+  it('should render a button', () => {
+    render(getButtonElement());
 
-  expect(screen.getByRole('button', { name: /Click me!/i })).toBeInTheDocument();
-});
+    expect(screen.getByRole('button', { name: /Click me!/i })).toBeInTheDocument();
+  });
 
-it('should stretch a button', () => {
-  expect(jsonButtonElement(true)).toHaveStyleRule('width', '100%');
-});
+  it('should stretch a button', () => {
+    expect(jsonButtonElement(true)).toHaveStyleRule('width', '100%');
+  });
 
-it('should match a snapshot', () => {
-  expect(jsonButtonElement()).toMatchSnapshot();
-});
+  it('should match a snapshot', () => {
+    expect(jsonButtonElement()).toMatchSnapshot();
+  });
 
-it('should match a snapshot with stretch prop', () => {
-  expect(jsonButtonElement(true)).toMatchSnapshot();
+  it('should match a snapshot with stretch prop', () => {
+    expect(jsonButtonElement(true)).toMatchSnapshot();
+  });
 });

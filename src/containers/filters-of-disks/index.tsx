@@ -2,10 +2,10 @@ import { get } from 'lodash';
 import { useDispatch, useSelector } from 'app/hooks';
 import { actions } from 'app/slice';
 import { selectProductFilters } from 'app/selectors';
-import { Label } from 'components/Label';
+import { Label } from 'components/dom/Label';
+import { Div } from 'components/dom/Div';
 import { Pane } from 'components/Pane';
-import { Div } from 'components/Div';
-import { NumberInput } from 'components/inputs';
+import { NumberInput } from 'components/Input';
 import styled from 'styled-components';
 
 const DivWrapper = styled(Div)`

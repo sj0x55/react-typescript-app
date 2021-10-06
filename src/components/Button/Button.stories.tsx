@@ -1,13 +1,12 @@
 import { Story } from '@storybook/react';
-import type { ButtonProps } from './Button';
-import { Button } from './';
+import { Button, TButtonProps } from './';
 
 export default {
   title: 'Components/Button',
   component: Button,
 };
 
-const Template: Story<ButtonProps> = (args) => <Button {...args}>Click me!</Button>;
+const Template: Story<TButtonProps> = (args) => <Button {...args}>Click me!</Button>;
 
 export const Default = Template.bind({});
 export const Stretched = Template.bind({});

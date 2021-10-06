@@ -27,6 +27,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
+    'react/display-name': 'off',
     'no-console': 'off',
     'no-debugger': 'off',
   },
