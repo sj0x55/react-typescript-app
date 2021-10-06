@@ -1,7 +1,7 @@
 module.exports = {
   ignorePatterns: ['.history', 'dist', 'node_modules'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -9,6 +9,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'plugin:cypress/recommended',
   ],
   env: {
     browser: true,
@@ -25,6 +26,15 @@ module.exports = {
     },
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+      {
+        usePrettierrc: true,
+      },
+    ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     'react/display-name': 'off',

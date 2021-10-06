@@ -1,13 +1,9 @@
 import dotenv from 'dotenv';
 import cors from 'cors';
 import express from 'express';
-import nodemailer from 'nodemailer';
 import ip from 'ip';
-import fs from 'fs';
-import { join } from 'path';
-import { __dirname } from './node.js';
 import { errorHandler, notFoundHandler } from './middlewares.mjs';
-import { killPort, getCorsConfig, listenServer, fetchAllDataFromWishList, arrayToObject } from './utils.mjs';
+import { killPort, getCorsConfig, listenServer } from './utils.mjs';
 import { loadData, saveData, fetchData, mergeData } from './data-loader.mjs';
 (async () => {
   try {

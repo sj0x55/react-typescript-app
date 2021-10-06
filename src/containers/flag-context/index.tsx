@@ -17,11 +17,7 @@ export const FlagContextProvider: FC<ReactNode> = ({ children }) => {
     setFlag(!flag);
   };
 
-  return (
-    <FlagContext.Provider value={{ flag, toggleFlag }}>
-      {children}
-    </FlagContext.Provider>
-  );
+  return <FlagContext.Provider value={{ flag, toggleFlag }}>{children}</FlagContext.Provider>;
 };
 
 export const useFlagContext = () => useContext(FlagContext);

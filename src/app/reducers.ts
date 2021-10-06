@@ -13,7 +13,10 @@ export const toggleIsUsed = (state: AppState, action: PayloadAction<boolean>) =>
   state.filters.isUsed = action.payload;
 };
 
-export const updateProductFilter = (state: AppState, action: PayloadAction<{ type: ProductTypes; property: string; value: unknown }>) => {
+export const updateProductFilter = (
+  state: AppState,
+  action: PayloadAction<{ type: ProductTypes; property: string; value: unknown }>,
+) => {
   const { type, property, value } = action.payload;
 
   set(state.filters, [type, property], value);

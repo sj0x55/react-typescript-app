@@ -1,6 +1,5 @@
-import { render, screen } from 'utils/tests';
+import { render } from 'utils/tests';
 import { ListOfDisks } from '.';
-// import { prepareValue } from './listOfDisks.operations';
 
 describe('ListOfDisks component', () => {
   it('should render list with few items', () => {

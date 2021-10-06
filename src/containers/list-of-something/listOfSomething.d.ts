@@ -1,5 +1,7 @@
 type SomethingItem = MainContentItem & {
-  features: {};
+  features: {
+    [key: string]: unknown;
+  };
 };
 
 type ListOfSomethingProps = {

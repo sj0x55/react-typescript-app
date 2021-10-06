@@ -18,7 +18,9 @@ export const loadData = (name) => {
 export const saveData = (name, data) => {
   try {
     fs.mkdirSync(dataDir);
-  } catch (err) {}
+  } catch (err) {
+    console.error(`${err}`);
+  }
 
   try {
     fs.writeFileSync(join(dataDir, `${name}-data.json`), JSON.stringify(data || [], null, '  '));
@@ -110,7 +112,6 @@ export async function fetchDataFromWishList(baseUrl, pathUrl, featureMap = {}) {
 export const mergeData = (currPoductData, newProductData) => {
   const currPoductDataObj = arrayToObject(['condition', 'href'], currPoductData);
   const newProductDataObj = arrayToObject(['condition', 'href'], newProductData);
-  const productsWithProceDropped = [];
 
   Object.entries(newProductDataObj).forEach(([key, newItem]) => {
     const currentItem = currPoductDataObj[key] || {};

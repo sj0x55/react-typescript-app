@@ -1,4 +1,4 @@
-import { render, create, screen } from 'utils/tests';
+import { create } from 'utils/tests';
 import { NumberInput } from '.';
 
 const getNumberInputElement = () => {

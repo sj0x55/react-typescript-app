@@ -1,4 +1,4 @@
-import { render, create } from 'utils/tests';
+import { create } from 'utils/tests';
 import { TextInput } from '.';
 
 const getTextInputElement = () => {
