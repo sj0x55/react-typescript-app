@@ -7,3 +7,4 @@
 - [ ] Disks and Smartphones data as separate state
 - [ ] Rename MainContent => BaseList
 - [ ] Add prefixes for all types/interfaces (T or I)
+- [ ] Mock request data on Cypress tests
