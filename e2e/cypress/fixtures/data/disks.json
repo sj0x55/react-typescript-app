@@ -1,0 +1,119 @@
+[
+  {
+    "title": "WD 4 TB Elements Portable External Hard Drive - New",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "capacity": 4
+    },
+    "price": 84.94,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 4 TB Elements Portable External Hard Drive - Used",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "capacity": 4
+    },
+    "price": 78,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 5 TB Elements Portable External Hard Drive - USB 3.0, Black",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "capacity": 5
+    },
+    "price": 105,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 5 TB My Passport Portable Hard Drive with Password Protection and Auto Backup Software - Black - Works with PC, Xbox and PS4",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "capacity": 5
+    },
+    "price": 117.34,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 5 TB My Passport Portable Hard Drive with Password Protection and Auto Backup Software - Black - Works with PC, Xbox and PS4",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "capacity": 5
+    },
+    "price": 107.4,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 5 TB My Passport for Mac Portable Hard Drive - Time Machine Ready with Password Protection, Midnight Blue",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "capacity": 5
+    },
+    "price": 122.96,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 5 TB My Passport for Mac Portable Hard Drive - Time Machine Ready with Password Protection, Midnight Blue",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "capacity": 5
+    },
+    "price": 112.18,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 8 TB Elements Desktop External Hard Drive - USB 3.0, Black",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "capacity": 8
+    },
+    "price": 159.99,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "WD 8 TB Elements Desktop External Hard Drive - USB 3.0, Black",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "capacity": 8
+    },
+    "price": 156.06,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  }
+]

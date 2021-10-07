@@ -1,0 +1,114 @@
+[
+  {
+    "title": "OnePlus 8T 5G 8GB RAM 128GB - New",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "size": "8GB +128GB",
+      "color": "Lunar Silver"
+    },
+    "price": 429,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 8T 5G 8GB RAM 128GB - Used",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "size": "8GB +128GB",
+      "color": "Lunar Silver"
+    },
+    "price": 314.24,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 8T 5G 12GB RAM 256GB Storage SIM-Free Smartphone with Quad Camera, 65W Warp Charge and Dual SIM - Aquamarine Green - 2 Year Warranty",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "size": "12GB+256GB",
+      "color": "Aquamarine Green"
+    },
+    "price": 549,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 8T 5G 12GB RAM 256GB Storage SIM-Free Smartphone with Quad Camera, 65W Warp Charge and Dual SIM - Aquamarine Green - 2 Year Warranty",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "size": "12GB+256GB",
+      "color": "Aquamarine Green"
+    },
+    "price": 417.89,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 9 5G (UK) SIM-Free Smartphone with Hasselblad Camera for Mobile - Astral Black 8GB RAM 128GB - 2 Year Warranty",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "size": "8GB RAM 128GB",
+      "color": "Astral Black"
+    },
+    "price": 594.21,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 9 5G (UK) SIM-Free Smartphone with Hasselblad Camera for Mobile - Astral Black 8GB RAM 128GB - 2 Year Warranty",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "size": "8GB RAM 128GB",
+      "color": "Astral Black"
+    },
+    "price": 552.62,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 9 5G (UK) SIM-Free Smartphone with Hasselblad Camera for Mobile - Arctic Sky 8GB RAM 128GB - 2 Year Warranty",
+    "image": "",
+    "href": "",
+    "condition": "new",
+    "features": {
+      "size": "8GB RAM 128GB",
+      "color": "Arctic Sky"
+    },
+    "price": 629,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  },
+  {
+    "title": "OnePlus 9 5G (UK) SIM-Free Smartphone with Hasselblad Camera for Mobile - Arctic Sky 8GB RAM 128GB - 2 Year Warranty",
+    "image": "",
+    "href": "",
+    "condition": "used",
+    "features": {
+      "size": "8GB RAM 128GB",
+      "color": "Arctic Sky"
+    },
+    "price": 556.32,
+    "isPriceChanged": false,
+    "timestampChanged": 0,
+    "prevPrice": null
+  }
+]
