@@ -16,13 +16,13 @@ export const Navigation = () => {
   return (
     <>
       <Wrapper>
-        <StyledLink to="/disks" data-testid="disks">
+        <StyledLink to="/disks" data-test="disks">
           Disks
         </StyledLink>
-        <StyledLink to="/smartphones" data-testid="smartphones">
+        <StyledLink to="/smartphones" data-test="smartphones">
           Smartphones
         </StyledLink>
-        <StyledLink to="/other" data-testid="other">
+        <StyledLink to="/other" data-test="other">
           Other
         </StyledLink>
       </Wrapper>

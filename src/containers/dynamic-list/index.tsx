@@ -61,7 +61,7 @@ export const DynamicList = ({ config, data }: DynamicListConfigProps) => {
   const colsLength = prepareConfig(config).length;
 
   return (
-    <Wrapper sizes={prepareConfig(config).map((item) => item.colSize)}>
+    <Wrapper data-test="dynamicData" sizes={prepareConfig(config).map((item) => item.colSize)}>
       {prepareConfig(config).map((conf, i) => (
         <ContentLayoutCell key={`head${i}`} columns={colsLength} align={conf.align}>
           {conf.name}
@@ -71,7 +71,8 @@ export const DynamicList = ({ config, data }: DynamicListConfigProps) => {
       {data.map((item, i) =>
         prepareConfig(config).map((conf, j) => (
           <ContentLayoutCell
-            data-testid={`testid${i}-${j + 1}`}
+            data-condition={item.condition}
+            data-test={`cell${i}-${j + 1}`}
             key={`cell${i}-${j + 1}`}
             columns={colsLength}
             align={conf.align}

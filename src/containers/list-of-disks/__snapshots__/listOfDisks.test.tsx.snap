@@ -207,6 +207,7 @@ exports[`ListOfDisks component should render list with few items 1`] = `
 
 <div
   class="c0 c1 c2"
+  data-test="dynamicData"
   sizes="40px,120px,200px,200px,150px,150px,1fr,120px"
 >
   <div
@@ -251,7 +252,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid0-1"
+    data-condition="used"
+    data-test="cell0-1"
   >
     <span
       class=" "
@@ -261,7 +263,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid0-2"
+    data-condition="used"
+    data-test="cell0-2"
   >
     <img
       class="c8"
@@ -272,7 +275,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid0-3"
+    data-condition="used"
+    data-test="cell0-3"
   >
     <span
       class=" "
@@ -282,7 +286,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid0-4"
+    data-condition="used"
+    data-test="cell0-4"
   >
     <span
       class=" "
@@ -292,7 +297,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid0-5"
+    data-condition="used"
+    data-test="cell0-5"
   >
     <span
       class=" "
@@ -302,7 +308,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid0-6"
+    data-condition="used"
+    data-test="cell0-6"
   >
     <span
       class=" "
@@ -312,7 +319,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c5"
-    data-testid="testid0-7"
+    data-condition="used"
+    data-test="cell0-7"
   >
     <a
       class="c9"
@@ -324,7 +332,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c6 c7"
-    data-testid="testid0-8"
+    data-condition="used"
+    data-test="cell0-8"
   >
     <span
       class=" c10"
@@ -338,7 +347,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid1-1"
+    data-condition="used"
+    data-test="cell1-1"
   >
     <span
       class=" "
@@ -348,7 +358,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid1-2"
+    data-condition="used"
+    data-test="cell1-2"
   >
     <img
       class="c8"
@@ -359,7 +370,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid1-3"
+    data-condition="used"
+    data-test="cell1-3"
   >
     <span
       class=" "
@@ -369,7 +381,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid1-4"
+    data-condition="used"
+    data-test="cell1-4"
   >
     <span
       class=" "
@@ -379,7 +392,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid1-5"
+    data-condition="used"
+    data-test="cell1-5"
   >
     <span
       class=" "
@@ -389,7 +403,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid1-6"
+    data-condition="used"
+    data-test="cell1-6"
   >
     <span
       class=" "
@@ -399,7 +414,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c5"
-    data-testid="testid1-7"
+    data-condition="used"
+    data-test="cell1-7"
   >
     <a
       class="c9"
@@ -411,7 +427,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c6 c7"
-    data-testid="testid1-8"
+    data-condition="used"
+    data-test="cell1-8"
   >
     <span
       class=" c10"
@@ -425,7 +442,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid2-1"
+    data-condition="used"
+    data-test="cell2-1"
   >
     <span
       class=" "
@@ -435,7 +453,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid2-2"
+    data-condition="used"
+    data-test="cell2-2"
   >
     <span
       class=" c10"
@@ -445,7 +464,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid2-3"
+    data-condition="used"
+    data-test="cell2-3"
   >
     <span
       class=" "
@@ -455,7 +475,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid2-4"
+    data-condition="used"
+    data-test="cell2-4"
   >
     <span
       class=" "
@@ -465,7 +486,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid2-5"
+    data-condition="used"
+    data-test="cell2-5"
   >
     <span
       class=" "
@@ -475,7 +497,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid2-6"
+    data-condition="used"
+    data-test="cell2-6"
   >
     <span
       class=" "
@@ -485,7 +508,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c5"
-    data-testid="testid2-7"
+    data-condition="used"
+    data-test="cell2-7"
   >
     <a
       class="c9"
@@ -497,7 +521,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c6 c7"
-    data-testid="testid2-8"
+    data-condition="used"
+    data-test="cell2-8"
   >
     <span
       class=" c10"
@@ -511,7 +536,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid3-1"
+    data-condition="new"
+    data-test="cell3-1"
   >
     <span
       class=" "
@@ -521,7 +547,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid3-2"
+    data-condition="new"
+    data-test="cell3-2"
   >
     <img
       class="c8"
@@ -532,7 +559,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid3-3"
+    data-condition="new"
+    data-test="cell3-3"
   >
     <span
       class=" "
@@ -542,7 +570,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid3-4"
+    data-condition="new"
+    data-test="cell3-4"
   >
     <span
       class=" "
@@ -552,7 +581,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid3-5"
+    data-condition="new"
+    data-test="cell3-5"
   >
     <span
       class=" "
@@ -562,7 +592,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c3 c4"
-    data-testid="testid3-6"
+    data-condition="new"
+    data-test="cell3-6"
   >
     <span
       class=" "
@@ -572,7 +603,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c5"
-    data-testid="testid3-7"
+    data-condition="new"
+    data-test="cell3-7"
   >
     <a
       class="c9"
@@ -584,7 +616,8 @@ exports[`ListOfDisks component should render list with few items 1`] = `
   </div>
   <div
     class="c6 c7"
-    data-testid="testid3-8"
+    data-condition="new"
+    data-test="cell3-8"
   >
     <span
       class=" c10"

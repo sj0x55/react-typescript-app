@@ -18,10 +18,12 @@ export const Filters = () => {
   return (
     <Pane title="Condition">
       <Div>
-        <Checkbox checked={isNew} onChange={handleToggleNew} /> <Label> New</Label>
+        <Checkbox data-test="newConditionCheckbox" checked={isNew} onChange={handleToggleNew} />
+        <Label> New</Label>
       </Div>
       <Div>
-        <Checkbox checked={isUsed} onChange={handleToggleUsed} /> <Label> Used</Label>
+        <Checkbox data-test="usedConditionCheckbox" checked={isUsed} onChange={handleToggleUsed} />
+        <Label> Used</Label>
       </Div>
     </Pane>
   );

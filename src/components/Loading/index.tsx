@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div.attrs({ 'data-testid': 'loading' })`
+export const Wrapper = styled.div.attrs({ 'data-test': 'loading' })`
   border: 1px solid ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: bold;
