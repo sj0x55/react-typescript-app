@@ -3,6 +3,8 @@ import http from 'http';
 import kill from 'kill-port';
 import axios from 'axios';
 import cheerio from 'cheerio';
+import fs from 'fs';
+import { join } from 'path';
 import userAgents from './user-agents.mjs';
 
 export async function killPort(port) {

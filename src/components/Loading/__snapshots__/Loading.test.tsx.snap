@@ -11,6 +11,7 @@ exports[`Loading component should match a snapshot 1`] = `
 
 <div
   className="c0"
+  data-test="loading"
 >
   Loading data...
 </div>

@@ -79,14 +79,21 @@ import { createTransport } from 'nodemailer';
       `/hz/wishlist/ls/282MWNCIB5SRV?${urlQuery}`,
     ],
     {
-      capacity: [/Capacity[\\n\s]+:[\\n\s]+(\d+)/i, Number],
+      capacity: [/Capacity[\\n\s]?:[\\n\s]?(\d+)\s?(?:GB|TB)/i, (m) => Number(m[1])],
+      capacityUnit: /Capacity[\\n\s]?:[\\n\s]?(?:\d+)\s?(GB|TB)/i,
     },
     (item) => {
       const { price, features } = item;
       const extraInfo = [];
 
       if (features && features.capacity) {
-        extraInfo.push(`<strong>Price per TB:</strong> £${parseFloat((price / features.capacity).toFixed(2))}`);
+        let capacity = features.capacity;
+
+        if (features.capacityUnit === 'GB') {
+          capacity = capacity / 1026;
+        }
+
+        extraInfo.push(`<strong>Price per TB:</strong> £${parseFloat((price / capacity).toFixed(2))}`);
       }
 
       return extraInfo;

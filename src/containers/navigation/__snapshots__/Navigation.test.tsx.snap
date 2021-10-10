@@ -24,6 +24,7 @@ exports[`should match a snapshot 1`] = `
     0={
       Object {
         "children": "Disks",
+        "data-test": "disks",
         "to": "/disks",
       }
     }
@@ -35,6 +36,7 @@ exports[`should match a snapshot 1`] = `
     0={
       Object {
         "children": "Smartphones",
+        "data-test": "smartphones",
         "to": "/smartphones",
       }
     }
@@ -46,6 +48,7 @@ exports[`should match a snapshot 1`] = `
     0={
       Object {
         "children": "Other",
+        "data-test": "other",
         "to": "/other",
       }
     }

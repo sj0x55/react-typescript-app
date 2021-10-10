@@ -3,6 +3,7 @@ type DiskItem = Product & {
   prevPricePerTB: number | null;
   features: {
     capacity?: number;
+    capacityUnit?: 'GB' | 'TB';
   };
 };
 

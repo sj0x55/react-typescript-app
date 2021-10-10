@@ -56,7 +56,8 @@ import { loadData, saveData, fetchData, mergeData } from './data-loader.mjs';
             ],
           );
 
-          features.capacity = [/Capacity[\\n\s]+:[\\n\s]+(\d+)/i, Number];
+          features.capacity = [/Capacity[\\n\s]?:[\\n\s]?(\d+)\s?(?:GB|TB)/i, (m) => Number(m[1])];
+          features.capacityUnit = /Capacity[\\n\s]?:[\\n\s]?(?:\d+)\s?(GB|TB)/i;
         } else if (name === 'smartphones') {
           pathUrls.push(...['/hz/wishlist/genericItemsPage/P2ZKOL4X451E?filter=unpurchased&sort=price-asc']);
 

@@ -33,6 +33,35 @@ export const fetchData = async (baseUrl, pathes, featureMap) => {
   return (await Promise.all(pathes.map((url) => fetchDataFromWishList(baseUrl, url, featureMap)))).flat();
 };
 
+export const parseFeatureMap = (featureMap, text) => {
+  const productFeatures = {};
+
+  if (text && typeof text === 'string') {
+    Object.entries(featureMap).forEach(([key, rexExp]) => {
+      const parseValue = (...args) => {
+        const matched = text.match(args[0]);
+        const matcherFn = args[1];
+
+        return matched && (matcherFn ? matcherFn(matched) : matched[1].trim());
+      };
+
+      let matchedValue;
+
+      if (Array.isArray(rexExp)) {
+        matchedValue = parseValue(...rexExp);
+      } else {
+        matchedValue = parseValue(rexExp);
+      }
+
+      if (!productFeatures[key] && matchedValue) {
+        productFeatures[key] = matchedValue;
+      }
+    });
+  }
+
+  return productFeatures;
+};
+
 export async function fetchDataFromWishList(baseUrl, pathUrl, featureMap = {}) {
   const allData = [];
   const content = await fetchContent(`${baseUrl}${pathUrl}`);
@@ -82,15 +111,10 @@ export async function fetchDataFromWishList(baseUrl, pathUrl, featureMap = {}) {
     const spanElements = itemInfoElement
       .find('span:not(:has(*))')
       .map((_, span) => {
-        Object.entries(featureMap).forEach(([key, rexExp]) => {
-          const spanText = spanContentToText(content(span).text());
+        const spanText = spanContentToText(content(span).text());
 
-          const matched = spanText.match(rexExp[0] || rexExp);
-          const matchedValue = matched && (rexExp[1] ? rexExp[1](matched[1]) : matched[1].trim());
-
-          if (!productFeatures[key] && matchedValue) {
-            productFeatures[key] = matchedValue;
-          }
+        Object.entries(parseFeatureMap(featureMap, spanText)).forEach(([name, value]) => {
+          productFeatures[name] = value;
         });
       })
       .toArray();

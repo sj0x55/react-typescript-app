@@ -8,3 +8,5 @@
 - [ ] Rename MainContent => BaseList
 - [ ] Add prefixes for all types/interfaces (T or I)
 - [ ] Mock request data on Cypress tests
+- [ ] k6 test
+- [ ] SiteSpeed.io and Grafana Dashboard

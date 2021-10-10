@@ -9,13 +9,14 @@ export const calcPricePerTB = (price?: number | null, capacity?: number): number
 export const prepareData = (data: DiskItem[]): DiskItem[] => {
   return data.map((item) => {
     const { features, price, prevPrice } = item;
-    const { capacity } = features || {};
+    const { capacity, capacityUnit } = features || {};
+    const capacityTB = capacityUnit === 'GB' ? (capacity || 0) / 1024 : capacity;
 
     return {
       ...item,
       features: { ...features },
-      pricePerTB: calcPricePerTB(price, capacity),
-      prevPricePerTB: calcPricePerTB(prevPrice, capacity),
+      pricePerTB: calcPricePerTB(price, capacityTB),
+      prevPricePerTB: calcPricePerTB(prevPrice, capacityTB),
     };
   });
 };

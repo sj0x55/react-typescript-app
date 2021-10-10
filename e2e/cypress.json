@@ -1,6 +1,8 @@
 {
   "baseUrl": "http://localhost:3000",
   "env": {
-    "COMMAND_DELAY": 0
-  }
+    "commandDelay": 0,
+    "apiUrl": "http://localhost:3005"
+  },
+  "experimentalStudio": true
 }

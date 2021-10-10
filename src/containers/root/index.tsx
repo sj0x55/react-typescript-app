@@ -9,6 +9,10 @@ import { Disks } from 'views/Disks';
 import { Smartphones } from 'views/Smartphones';
 import { Something } from 'views/Something';
 import { FlagContextProvider, useFlagContext } from 'containers/flag-context';
+import { Header } from 'components/dom/Header';
+import { Footer } from 'components/dom/Footer';
+import { Pane } from 'components/Pane';
+import { Text } from 'components/Text';
 
 const RootBody = () => {
   const { flag, toggleFlag } = useFlagContext();
@@ -21,17 +25,19 @@ const RootBody = () => {
     <>
       <ThemeProvider theme={flag ? invertedTheme : mainTheme}>
         <GlobalStyle />
-        <button onClick={handleOnClick}>
-          {flag ? (
-            <span aria-label="Normal mode" role="img">
-              🌞 Switch to normal mode
-            </span>
-          ) : (
-            <span aria-label="Invert mode" role="img">
-              🌜 Switch to invert mode
-            </span>
-          )}
-        </button>
+        <Header>
+          <button onClick={handleOnClick}>
+            {flag ? (
+              <span aria-label="Normal mode" role="img">
+                🌞 Switch to normal mode
+              </span>
+            ) : (
+              <span aria-label="Invert mode" role="img">
+                🌜 Switch to invert mode
+              </span>
+            )}
+          </button>
+        </Header>
 
         <Navigation />
         <RootLayoutContainer>
@@ -50,6 +56,12 @@ const RootBody = () => {
             </Route>
           </Switch>
         </RootLayoutContainer>
+
+        <Footer>
+          <Pane align="center">
+            Made with ❤️ to <Text bold={true}>programming</Text>!
+          </Pane>
+        </Footer>
       </ThemeProvider>
     </>
   );

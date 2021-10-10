@@ -1,12 +1,12 @@
-const COMMAND_DELAY = Cypress.env('COMMAND_DELAY') || 0;
+const commandDelay = Cypress.env('commandDelay') || 0;
 
-if (COMMAND_DELAY > 0) {
+if (commandDelay > 0) {
   for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {
     Cypress.Commands.overwrite(command, (originalFn, ...args) => {
       const origVal = originalFn(...args);
 
       return new Promise((resolve) => {
-        setTimeout(() => resolve(origVal), COMMAND_DELAY);
+        setTimeout(() => resolve(origVal), commandDelay);
       });
     });
   }
