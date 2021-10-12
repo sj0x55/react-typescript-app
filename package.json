@@ -68,7 +68,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test-with-coverage": "npm test -- --coverage",
     "e2e": "cypress open --project ./e2e",
     "eject": "react-scripts eject",
     "lint": "eslint --ext js,mjs,jsx,ts,tsx,json ./src",

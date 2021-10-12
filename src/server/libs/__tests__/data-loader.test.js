@@ -1,7 +1,8 @@
 import * as axios from 'axios';
 import fs from 'fs';
 import { join } from 'path';
-import { mergeData, fetchData, parseFeatureMap } from '../data-loader.mjs';
+import { mergeData } from '../libs/data-parser.mjs';
+import { fetchData, parseFeatureMap } from '../libs/data-loader.mjs';
 
 jest.mock('axios');
 

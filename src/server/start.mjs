@@ -4,7 +4,9 @@ import express from 'express';
 import ip from 'ip';
 import { errorHandler, notFoundHandler } from './middlewares.mjs';
 import { killPort, getCorsConfig, listenServer } from './utils.mjs';
-import { loadData, saveData, fetchData, mergeData } from './data-loader.mjs';
+import { mergeData } from './libs/data-parser.mjs';
+import { loadData, saveData, fetchData } from './libs/data-loader.mjs';
+
 (async () => {
   try {
     dotenv.config();

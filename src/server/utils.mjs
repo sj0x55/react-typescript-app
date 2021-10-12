@@ -129,3 +129,30 @@ export const arrayToObject = (propKeyNames, items) => {
 
   return obj;
 };
+
+export const normalizeWhitespaces = (str) => {
+  return str.replace(/[/\s]+/gi, ' ').trim();
+};
+
+export const normalizePriceNumber = (price, regExp) => {
+  const matched = price.match(regExp);
+
+  if (matched) {
+    return `${matched[1].replace(/[,.]/gi, '')}.${matched[2]}`;
+  }
+};
+
+export const priceToNumber = (price) => {
+  price = `${price}`
+    .trim()
+    .replace(' ', '')
+    .replace(/[^0-9.,]+/, '');
+  price = normalizePriceNumber(price, /(\d+(?:,\d+)+)(?:\.(\d+))?/) || price;
+  price = price || normalizePriceNumber(price, /(\d+(?:\.\d+)+)(?:,(\d+))?/);
+
+  return parseFloat(price || 0);
+};
+
+export const calcPriceChangePercentages = (prevPrice, newPrice) => {
+  return parseFloat((1 - newPrice / prevPrice) * 100);
+};

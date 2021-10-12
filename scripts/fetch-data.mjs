@@ -7,9 +7,9 @@ import {
   loadData,
   saveData,
   fetchData,
-  mergeData,
   sendEmail,
-} from '../src/server/data-loader.mjs';
+} from '../src/server/libs/data-loader.mjs';
+import { mergeData } from '../src/server/libs/data-parser.mjs';
 import { createTransport } from 'nodemailer';
 
 (async () => {
